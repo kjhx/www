@@ -1,0 +1,12 @@
+name: Merge
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    name: Deploy (PROD)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@25a956c84d5dd820d28caab9f86b8d183aeeff3d
+      - run: vercel -n 'www' -c --prod -t ${{ secrets.VERCEL_TOKEN }}

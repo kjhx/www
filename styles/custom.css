@@ -1,0 +1,92 @@
+html {
+  @apply bg-white dark:bg-black text-black dark:text-white;
+}
+
+#__next {
+  @apply h-full;
+}
+
+::selection {
+  @apply bg-accent-500 text-white dark:bg-green-200 dark:text-black;
+}
+
+@layer components {
+  .text-dynamic-h0 {
+    @apply text-2xl lg:text-3xl xl:text-4xl;
+  }
+
+  h1 {
+    @apply text-xl lg:text-2xl xl:text-3xl font-bold mb-4;
+  }
+
+  .text-dynamic-h1 {
+    @apply text-xl lg:text-2xl xl:text-3xl;
+  }
+
+  h2 {
+    @apply text-base lg:text-lg xl:text-xl font-bold mb-2;
+  }
+
+  h3 {
+    @apply text-base lg:text-lg xl:text-xl font-bold mb-1;
+  }
+
+  h4 {
+    @apply text-base lg:text-lg xl:text-xl font-bold;
+  }
+
+  .text-dynamic-p {
+    @apply text-base lg:text-lg xl:text-xl;
+  }
+
+  .text-dynamic-small {
+    @apply text-sm lg:text-sm xl:text-sm;
+  }
+
+  article p {
+    @apply leading-relaxed pb-4;
+  }
+
+  article p:last-child {
+    @apply pb-0;
+  }
+
+  article ul {
+    @apply -mt-4 pb-4 list-inside list-disc;
+  }
+
+  article ul:last-child {
+    @apply pb-0
+  }
+
+  .link-std {
+    @apply hover:text-accent-500 dark:hover:text-accent-500 transition-colors duration-200;
+  }
+
+  .link-nostyle {
+    @apply cursor-pointer;
+  }
+
+  .link-underline {
+    @apply underline;
+  }
+
+  .btn {
+    @apply py-3 px-4 text-base font-semibold rounded-lg;
+  }
+
+  .btn-accent {
+    @apply bg-accent-500 dark:bg-accent-500 text-white hover:bg-accent-600 transition-colors duration-200;
+  }
+
+  .btn-gray {
+    @apply bg-gray-600 dark:bg-gray-600 text-white hover:bg-gray-700 transition-colors duration-200;
+  }
+}
+
+@layer utilities {
+  .bg-blurred {
+    backdrop-filter: saturate(180%) blur(6px);
+    -webkit-backdrop-filter: saturate(180%) blur(6px);
+  }
+}

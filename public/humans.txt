@@ -1,0 +1,4 @@
+/* SITE */
+Built with Next.js.
+Styled with TailwindCSS, by Tailwind Labs.
+Hosted on Vercel, previously Now.
