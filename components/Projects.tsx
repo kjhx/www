@@ -17,11 +17,11 @@ const Projects = ({ projectsArray }: ProjectsProps): JSX.Element => {
               <p className='font-normal'>/</p>
               <div className='flex flex-col space-y-1'>
                 <div className='flex items-center space-x-3'>
-                  <Link href={project.homepage === '' || project.homepage === null ? project.html_url : project.homepage} className='link-std'>
+                  <Link href={project.homepage === null || project.homepage === '' ? project.html_url : project.homepage} className='link-std'>
                     <p>{project.name}</p>
                   </Link>
                   {project.archived && (
-                    <div className='bg-white text-black px-2 text-dynamic-small2 font-normal'>
+                    <div className='bg-black text-white dark:bg-white dark:text-black px-2 text-dynamic-small2 font-normal'>
                       <p title='This project is no longer being maintained.' className='cursor-help'>archived</p>
                     </div>
                   )}
