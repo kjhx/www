@@ -1,4 +1,5 @@
 export interface Project {
+  archived: boolean,
   created_at: string,
   description: string,
   homepage: string,
@@ -7,6 +8,7 @@ export interface Project {
   license: License,
   name: string,
   owner: User,
+  stargazers_count: number,
   updated_at: string
 }
 
