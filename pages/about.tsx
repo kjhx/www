@@ -24,20 +24,42 @@ const Section = ({title, children}: SectionProps): JSX.Element => {
   );
 };
 
+// https://stackoverflow.com/a/17727953
+function daysBetween(StartDate: Date, EndDate: Date) {
+  // The number of milliseconds in all UTC days (no DST)
+  const oneDay = 1000 * 60 * 60 * 24;
+
+  // A day in UTC always lasts 24 hours (unlike in other time formats)
+  const start = Date.UTC(EndDate.getFullYear(), EndDate.getMonth(), EndDate.getDate());
+  const end = Date.UTC(StartDate.getFullYear(), StartDate.getMonth(), StartDate.getDate());
+
+  // so it's safe to divide by 24 hours
+  return (start - end) / oneDay;
+}
+
 interface CurrentEntryProps {
   Icon: React.ElementType
   name: string,
-  startDate: string,
+  startDate: Date,
+  endDate?: Date,
   description: string
 }
-const CurrentEntry = ({Icon, name, startDate, description}: CurrentEntryProps): JSX.Element => {
+
+const CurrentEntry = ({Icon, name, startDate, endDate, description}: CurrentEntryProps): JSX.Element => {
+  const ended = endDate ? true : false;
+  const duration = (ended ? daysBetween(startDate, endDate) : daysBetween(startDate, new Date())).toLocaleString();
+  const timeField = ended ? `for ${duration} days` : `since ${duration} days ago`;
   return (
     <div className='flex space-x-3'>
       <div className='p-1'>
         <Icon size={18} strokeWidth={3} />
       </div>
       <div className='flex flex-col items-start text-dynamic-p'>
-        <p className='font-semibold'>{name}<span className='text-gray-400 font-normal'> {startDate}</span></p>
+        <div className='flex space-x-0 sm:space-x-1 flex-wrap sm:flex-nowrap'>
+          <span className='font-semibold w-full sm:w-auto'>{name}</span>
+          <span className='text-gray-400 font-normal'> {timeField}</span>
+        </div>
+        {/* <p className='font-semibold'>{name}<span className='text-gray-400 font-normal'> {timeField}</span></p> */}
         <p>{description}</p>
       </div>
     </div>
@@ -67,13 +89,14 @@ export default function About(): JSX.Element {
           <CurrentEntry
             Icon={Code}
             name='Engineering Intern at J.B. Hunt'
-            startDate='June 1, 2021'
+            startDate={new Date(2020, 5, 1)}
+            // endDate={new Date(2020, 5, 5)}
             description='Reinventing transportation through the development of innovative software solutions for a national portfolio of customers.'
           />
           <CurrentEntry
             Icon={BookOpen}
             name='Studying at Harding University'
-            startDate='June 1, 2021'
+            startDate={new Date(2017, 7, 15)}
             description='Pursuing a bachelor of arts in Computer Science and Graphic Design.'
           />
         </Section>
