@@ -37,7 +37,7 @@ export default function Home(): JSX.Element {
             <Projects projectsArray={PinnedProjects} />
             <Link to='/projects' className='text-accent-500 flex items-center space-x-1 text-dynamic-small font-semibold pl-3'>
               <p>See all projects</p>
-              <ArrowRight size={18} />
+              <ArrowRight size={16} strokeWidth={3} />
             </Link>
           </div>
         </div>
