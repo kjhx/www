@@ -1,0 +1,22 @@
+name: Compress Images
+
+on:
+  pull_request:
+    paths:
+      - "**.jpg"
+      - "**.jpeg"
+      - "**.png"
+      - "**.webp"
+
+jobs:
+  compress:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    name: Compress Images
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@25a956c84d5dd820d28caab9f86b8d183aeeff3d
+      - name: Compress Images
+        uses: calibreapp/image-actions@25a956c84d5dd820d28caab9f86b8d183aeeff3d
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}

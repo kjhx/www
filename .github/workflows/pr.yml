@@ -20,6 +20,7 @@ jobs:
       - run: yarn
       - run: yarn lint
   deploy:
+    if: github.event.pull_request.head.repo.full_name == github.repository
     name: Deploy (TEST)
     needs: [lint]
     runs-on: ubuntu-latest
