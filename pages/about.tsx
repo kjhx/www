@@ -2,7 +2,7 @@ import Page from '@components/Page';
 import Link from '@components/Link';
 import Projects from '@components/Projects';
 import { PinnedProjects } from 'config/pinned';
-import { BookOpen, Code, GitHub, Instagram } from 'react-feather';
+import { BookOpen, Code, GitHub, Instagram, ArrowRight } from 'react-feather';
 import Image from 'next/image';
 
 interface SectionProps {
@@ -59,7 +59,6 @@ const CurrentEntry = ({Icon, name, startDate, endDate, description}: CurrentEntr
           <span className='font-semibold w-full sm:w-auto'>{name}</span>
           <span className='text-gray-400 font-normal'> {timeField}</span>
         </div>
-        {/* <p className='font-semibold'>{name}<span className='text-gray-400 font-normal'> {timeField}</span></p> */}
         <p>{description}</p>
       </div>
     </div>
@@ -90,7 +89,6 @@ export default function About(): JSX.Element {
             Icon={Code}
             name='Engineering Intern at J.B. Hunt'
             startDate={new Date(2020, 5, 1)}
-            // endDate={new Date(2020, 5, 5)}
             description='Reinventing transportation through the development of innovative software solutions for a national portfolio of customers.'
           />
           <CurrentEntry
@@ -100,8 +98,14 @@ export default function About(): JSX.Element {
             description='Pursuing a bachelor of arts in Computer Science and Graphic Design.'
           />
         </Section>
-        <Section title='Projects'>
-          <Projects projectsArray={PinnedProjects} />
+        <Section title='Select Projects'>
+          <div className='flex flex-col space-y-6'>
+            <Projects projectsArray={PinnedProjects} />
+            <Link to='/projects' className='text-accent-500 flex items-center space-x-1 text-dynamic-small font-semibold pl-3'>
+              <p>See all projects</p>
+              <ArrowRight size={16} strokeWidth={3} />
+            </Link>
+          </div>
         </Section>
         <Section title='Social'>
           <div className='flex items-center space-x-2'>
