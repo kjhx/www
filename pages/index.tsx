@@ -3,7 +3,7 @@ import Link from '@components/Link';
 import Emoji from '@components/Emoji';
 import Projects from '@components/Projects';
 import { PinnedProjects } from 'config/pinned';
-import { ArrowRight, ArrowUpRight } from 'react-feather';
+import { ArrowRight } from 'react-feather';
 
 export default function Home(): JSX.Element {
   return (
