@@ -11,7 +11,7 @@ const Header = ({ title = 'Welcome', snackbar = true }: Partial<HeaderOptions>):
   const currentPath = router.pathname.substring(1).split('/');
 
   return (
-    <header className='w-full px-3 py-3 font-semibold items-center'>
+    <header className='w-full px-3 pt-3 mb-3 font-semibold items-center sticky top-0 z-50 bg-blurred'>
       <div className='flex flex-col space-y-3 justify-between max-w-xl mx-auto'>
         <div className='p-3 bg-black text-white dark:bg-white dark:text-black text-dynamic-h0 font-black tracking-tighter'>
           <p>{title}</p>

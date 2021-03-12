@@ -2,7 +2,7 @@ import { Project } from '@interfaces/github';
 
 export const PinnedProjects: Array<Partial<Project>> = [
   {
-    name: 'Agile',
+    name: 'agile',
     description: 'Minimalist time tracking for agile teams.',
     html_url: 'https://github.com/kjhx/agile',
     homepage: 'https://agile.huggins.io'
@@ -22,6 +22,7 @@ export const PinnedProjects: Array<Partial<Project>> = [
   {
     name: 'www',
     description: 'The code behind huggins.io',
-    html_url: 'https://github.com/kjhx/www'
+    html_url: 'https://github.com/kjhx/www',
+    homepage: 'https://github.com/kjhx/www'
   }
 ];

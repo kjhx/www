@@ -16,14 +16,18 @@ const Projects = ({ projectsArray }: ProjectsProps): JSX.Element => {
             <div className='flex space-x-1 items-start'>
               <p className='font-normal'>/</p>
               <div className='flex flex-col space-y-1'>
-                <Link href={project.homepage ?? project.html_url} className='link-std'>
-                  <div className='flex space-x-1 items-center text-dynamic-p'>
+                <div className='flex items-center space-x-3'>
+                  <Link href={project.homepage === null || project.homepage === '' ? project.html_url : project.homepage} className='link-std'>
                     <p>{project.name}</p>
-                    {/* <ArrowUpRight size={16} strokeWidth={4} /> */}
-                  </div>
-                </Link>
+                  </Link>
+                  {project.archived && (
+                    <div className='bg-black text-white dark:bg-white dark:text-black px-2 text-dynamic-small2 font-normal'>
+                      <p title='This project is no longer being maintained.' className='cursor-help'>archived</p>
+                    </div>
+                  )}
+                </div>
                 <div className='text-dynamic-small font-normal text-gray-400'>
-                  <p>{project.description}</p>
+                  {project.description}
                 </div>
               </div>
             </div>

@@ -38,9 +38,17 @@ html {
   .text-dynamic-p {
     @apply text-base lg:text-lg xl:text-xl;
   }
+  
+  .text-dynamic-p2 {
+    @apply text-base xl:text-lg;
+  }
 
   .text-dynamic-small {
-    @apply text-sm lg:text-sm xl:text-sm;
+    @apply text-sm lg:text-sm xl:text-base;
+  }
+
+  .text-dynamic-small2 {
+    @apply text-xs lg:text-sm xl:text-sm;
   }
 
   article p {
