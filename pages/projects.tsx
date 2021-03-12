@@ -10,7 +10,7 @@ interface AboutProps {
   notFound: boolean
 }
 
-export async function getServerSideProps(): Promise<any> {
+export async function getStaticProps(): Promise<any> {
   const res = await fetch('https://api.github.com/users/kjhx/repos');
   const data = await res.json();
 
@@ -19,7 +19,8 @@ export async function getServerSideProps(): Promise<any> {
       props: {
         data: null,
         notFound: true
-      }
+      },
+      revalidate: 3
     };
   }
 
@@ -28,7 +29,8 @@ export async function getServerSideProps(): Promise<any> {
       // Sort the array by last updated
       data: data.sort((a, b) => +new Date(b.updated_at) - +new Date(a.updated_at)),
       notFound: false
-    }
+    },
+    revalidate: 30
   };
 }
 
