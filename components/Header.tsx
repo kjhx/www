@@ -21,14 +21,21 @@ const Header = ({ title = 'Welcome', snackbar = true }: Partial<HeaderOptions>):
             <Link to='/' className='hover:text-accent-400 dark:hover:text-accent-500'>Index</Link>
             <p>/</p>
             {currentPath.map(slug => {
-              const divider = currentPath.indexOf(slug) === currentPath.length ? <p>/</p> : <div />;
-              return (
-                // eslint-disable-next-line react/jsx-key
-                <div className='flex space-x-1'>
-                  <Link to={slug} className='hover:text-accent-400 dark:hover:text-accent-500 capitalize'>{slug.replace('-', ' ')}</Link>
-                  {divider}
-                </div>
-              );
+              const displayName = slug.replace('-', ' ');
+              if (currentPath.indexOf(slug) === currentPath.length - 1) {
+                return (
+                  <div key={slug} className='flex space-x-1'>
+                    <p className='capitalize'>{displayName}</p>
+                  </div>
+                );
+              } else {
+                return (
+                  <div key={slug} className='flex space-x-1'>
+                    <Link to={slug} className='hover:text-accent-400 dark:hover:text-accent-500 capitalize'>{displayName}</Link>
+                    <p>/</p>
+                  </div>
+                );
+              }
             })}
           </div>
         )}
