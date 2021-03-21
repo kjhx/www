@@ -19,7 +19,7 @@ export default function Home(): JSX.Element {
         <div className='flex space-x-6 mt-6'>
           <Link to='/about' className='link-nostyle'>
             <div className='btn btn-accent'>
-              More info
+              More about me
             </div>
           </Link>
           <Link to='/open-invitation' className='link-nostyle'>
