@@ -11,8 +11,7 @@ const Projects = ({ projectsArray }: ProjectsProps): JSX.Element => {
     <div className='flex flex-col space-y-6'>
       {projectsArray.map(project => {
         return (
-          // eslint-disable-next-line react/jsx-key
-          <div className='flex flex-col font-semibold'>
+          <div className='flex flex-col font-semibold' key={project.name}>
             <div className='flex space-x-1 items-start'>
               <p className='font-normal'>/</p>
               <div className='flex flex-col space-y-1'>
