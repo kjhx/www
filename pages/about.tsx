@@ -4,6 +4,7 @@ import Projects from '@components/Projects';
 import { PinnedProjects } from 'config/pinned';
 import { BookOpen, Code, GitHub, Instagram, ArrowRight } from 'react-feather';
 import Image from 'next/image';
+import { CurrentEntries } from 'config/currently';
 
 interface SectionProps {
   title: string,
@@ -55,7 +56,7 @@ const CurrentEntry = ({Icon, name, startDate, endDate, description}: CurrentEntr
         <Icon size={18} strokeWidth={3} />
       </div>
       <div className='flex flex-col items-start text-dynamic-p'>
-        <div className='flex space-x-0 sm:space-x-1 flex-wrap sm:flex-nowrap'>
+        <div className='flex space-x-0 sm:space-x-2 flex-wrap sm:flex-nowrap'>
           <span className='font-semibold w-full sm:w-auto'>{name}</span>
           <span className='text-gray-400 font-normal'> {timeField}</span>
         </div>
@@ -85,7 +86,7 @@ export default function About(): JSX.Element {
           </p>
         </article>
         <Section title='Currently'>
-          <CurrentEntry
+          {/* <CurrentEntry
             Icon={Code}
             name='Engineering Intern at J.B. Hunt'
             startDate={new Date(2020, 5, 1)}
@@ -96,7 +97,20 @@ export default function About(): JSX.Element {
             name='Studying at Harding University'
             startDate={new Date(2017, 7, 15)}
             description='Pursuing a bachelor of arts in Computer Science and Graphic Design.'
-          />
+          /> */}
+          {CurrentEntries.map(entry => {
+            return (
+              <div key={entry.name}>
+                <CurrentEntry
+                  Icon={entry.Icon}
+                  name={entry.name}
+                  startDate={entry.startDate}
+                  endDate={entry?.endDate}
+                  description={entry.description}
+                />
+              </div>
+            );
+          })}
         </Section>
         <Section title='Select Projects'>
           <div className='flex flex-col space-y-6'>

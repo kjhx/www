@@ -34,6 +34,11 @@ const Projects = ({ projectsArray }: ProjectsProps): JSX.Element => {
                       <p title='This project is a fork of another repository.' className='cursor-help'>{project.stargazers_count} {project.stargazers_count === 1 ? 'star' : 'stars' }</p>
                     </div>
                   )}
+                  {/* {project.language && (
+                    <div className='bg-black text-white dark:bg-white dark:text-black px-2 text-dynamic-small2 font-normal'>
+                      <p title={`This project is mostly ${project.language}.`} className='cursor-help'>{project.language.toLowerCase()}</p>
+                    </div>
+                  )} */}
                 </div>
                 <div className='text-dynamic-small font-normal text-gray-400'>
                   {project.description}
