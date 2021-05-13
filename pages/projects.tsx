@@ -40,7 +40,7 @@ export default function About({ data, notFound }: AboutProps): JSX.Element {
       <div className='max-w-xl mx-auto pt-3'>
         <div className='flex-col space-y-6'>
           <p>
-            Software projects I‘ve built to learn, have fun, or automate workflows.
+            All my software projects that are currently hosted on GitHub.
           </p>
           {notFound && (
             <Callout Icon={AlertCircle}>

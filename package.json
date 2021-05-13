@@ -1,7 +1,7 @@
 {
   "name": "www",
   "description": "Designer & devloper from Houston, Texas. Loves open source, design systems, photography, and music.",
-  "version": "4.1.1",
+  "version": "4.2.0",
   "private": true,
   "author": "Kyle Huggins (http://huggins.io/)",
   "scripts": {

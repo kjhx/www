@@ -2,6 +2,7 @@ export interface Project {
   archived: boolean,
   created_at: string,
   description: string,
+  fork: boolean,
   homepage: string,
   html_url: string,
   language: string,
