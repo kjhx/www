@@ -2,7 +2,7 @@ import Page from '@components/Page';
 import Link from '@components/Link';
 import Projects from '@components/Projects';
 import { PinnedProjects } from 'config/pinned';
-import { BookOpen, Code, GitHub, Instagram, ArrowRight } from 'react-feather';
+import { GitHub, Instagram, ArrowRight } from 'react-feather';
 import Image from 'next/image';
 import { CurrentEntries } from 'config/currently';
 
@@ -86,18 +86,6 @@ export default function About(): JSX.Element {
           </p>
         </article>
         <Section title='Currently'>
-          {/* <CurrentEntry
-            Icon={Code}
-            name='Engineering Intern at J.B. Hunt'
-            startDate={new Date(2020, 5, 1)}
-            description='Reinventing transportation through the development of innovative software solutions for a national portfolio of customers.'
-          />
-          <CurrentEntry
-            Icon={BookOpen}
-            name='Studying at Harding University'
-            startDate={new Date(2017, 7, 15)}
-            description='Pursuing a bachelor of arts in Computer Science and Graphic Design.'
-          /> */}
           {CurrentEntries.map(entry => {
             return (
               <div key={entry.name}>
