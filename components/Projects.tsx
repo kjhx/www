@@ -31,7 +31,7 @@ const Projects = ({ projectsArray }: ProjectsProps): JSX.Element => {
                   )}
                   {project?.stargazers_count > 0 && (
                     <div className='bg-black text-white dark:bg-white dark:text-black px-2 text-dynamic-small2 font-normal'>
-                      <p title={`This project has been starred by ${project.stargazers_count} people.`} className='cursor-help'>{project.stargazers_count} {project.stargazers_count === 1 ? 'star' : 'stars' }</p>
+                      <p>{project.stargazers_count} {project.stargazers_count === 1 ? 'star' : 'stars' }</p>
                     </div>
                   )}
                   {/* {project.language && (
