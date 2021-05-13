@@ -19,19 +19,19 @@ const Projects = ({ projectsArray }: ProjectsProps): JSX.Element => {
                   <Link href={project.homepage === null || project.homepage === '' ? project.html_url : project.homepage} className='link-std'>
                     <p>{project.name}</p>
                   </Link>
-                  {project.archived && (
+                  {project?.archived && (
                     <div className='bg-black text-white dark:bg-white dark:text-black px-2 text-dynamic-small2 font-normal'>
                       <p title='This project is no longer being maintained.' className='cursor-help'>archived</p>
                     </div>
                   )}
-                  {project.fork && (
+                  {project?.fork && (
                     <div className='bg-black text-white dark:bg-white dark:text-black px-2 text-dynamic-small2 font-normal'>
                       <p title='This project is a fork of another repository.' className='cursor-help'>fork</p>
                     </div>
                   )}
-                  {project.stargazers_count > 0 && (
+                  {project?.stargazers_count > 0 && (
                     <div className='bg-black text-white dark:bg-white dark:text-black px-2 text-dynamic-small2 font-normal'>
-                      <p title='This project is a fork of another repository.' className='cursor-help'>{project.stargazers_count} {project.stargazers_count === 1 ? 'star' : 'stars' }</p>
+                      <p>{project.stargazers_count} {project.stargazers_count === 1 ? 'star' : 'stars' }</p>
                     </div>
                   )}
                   {/* {project.language && (
