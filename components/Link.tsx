@@ -1,19 +1,17 @@
 import Link from 'next/link';
 
 interface LinkProps {
-  href?: string,
-  to?: string,
-  className?: string,
-  children?: any
+  href?: string;
+  to?: string;
+  className?: string;
+  children?: any;
 }
 
 const Page = ({ href, to, className = 'link-std link-underline', children }: LinkProps): JSX.Element => {
   if (to) {
     return (
       <Link href={to as string}>
-        <a className={className}>
-          {children}
-        </a>
+        <a className={className}>{children}</a>
       </Link>
     );
   } else {
