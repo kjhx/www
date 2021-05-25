@@ -38,7 +38,7 @@ html {
   .text-dynamic-p {
     @apply text-base lg:text-lg xl:text-xl;
   }
-  
+
   .text-dynamic-p2 {
     @apply text-base xl:text-lg;
   }
@@ -64,7 +64,7 @@ html {
   }
 
   article ul:last-child {
-    @apply pb-0
+    @apply pb-0;
   }
 
   .link-std {

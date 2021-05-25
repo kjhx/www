@@ -1,31 +1,31 @@
 export interface Project {
-  archived: boolean,
-  created_at: string,
-  description: string,
-  fork: boolean,
-  homepage: string,
-  html_url: string,
-  language: string,
-  license: License,
-  name: string,
-  owner: User,
-  stargazers_count: number,
-  updated_at: string
+  archived: boolean;
+  created_at: string;
+  description: string;
+  fork: boolean;
+  homepage: string;
+  html_url: string;
+  language: string;
+  license: License;
+  name: string;
+  owner: User;
+  stargazers_count: number;
+  updated_at: string;
 }
 
 export interface License {
-  key: string,
-  name: string,
-  spdx_id: string,
-  url: string
+  key: string;
+  name: string;
+  spdx_id: string;
+  url: string;
 }
 
 export interface User {
-  bio: string,
-  blog: string,
-  company: string,
-  html_url: string,
-  location: string,
-  login: string,
-  name: string
+  bio: string;
+  blog: string;
+  company: string;
+  html_url: string;
+  location: string;
+  login: string;
+  name: string;
 }
