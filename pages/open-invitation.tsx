@@ -20,7 +20,7 @@ export default function Home(): JSX.Element {
           </ul>
           <p>Things I‘m interested in:</p>
           <ul>
-            <li>Software tooling</li>
+            <li>Software tooling (especially devops!)</li>
             <li>Managing teams</li>
             <li>Accessibility in design</li>
           </ul>
