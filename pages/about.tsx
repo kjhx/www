@@ -5,6 +5,7 @@ import { PinnedProjects } from 'config/pinned';
 import { GitHub, Instagram, ArrowRight } from 'react-feather';
 import Image from 'next/image';
 import { CurrentEntries } from 'config/currently';
+import AboutPhoto from '../public/img/about/huggins.jpg';
 
 interface SectionProps {
   title: string;
@@ -69,20 +70,13 @@ export default function About(): JSX.Element {
     <Page title="About">
       <div className="max-w-xl mx-auto flex flex-col space-y-12">
         <div className="overflow-hidden w-full">
-          <Image
-            src="/img/about/huggins.jpg"
-            layout="responsive"
-            width={949}
-            height={634}
-            className="z-0 rounded-md"
-            draggable={false}
-          />
+          <Image src={AboutPhoto} layout="responsive" placeholder="blur" className="z-0 rounded-md" draggable={false} />
         </div>
         <article>
-          <p>My name is Kyle Huggins. I‘m a designer and developer from Houston, Texas.</p>
+          <p>My name is Kyle Huggins. I‘m a designer and developer living in Northwest Arkansas.</p>
           <p>
-            I love web development, design systems, and photography. I spend the majority of my time as a student,
-            learning about software engineering and graphic design.
+            I love web development, design systems, and photography. I&apos;m a software engineer building cloud native
+            web services with J.B. Hunt.
           </p>
           <p>
             If you‘d like to get in touch, see my <Link to="/open-invitation">open invitation</Link>.

@@ -1,15 +1,22 @@
 import { Entry } from '@interfaces/currententry';
-import { BookOpen, Code } from 'react-feather';
+import { BookOpen, Code, Command } from 'react-feather';
 
 // Don't forget to subtract one from the target month.
 
 export const CurrentEntries: Array<Entry> = [
   {
+    Icon: Command,
+    name: 'Software Engineer with J.B. Hunt',
+    startDate: new Date(2021, 5, 12),
+    description: 'Inventing the future of transportation.',
+  },
+  {
     Icon: Code,
-    name: 'Engineering Intern at J.B. Hunt',
+    name: 'Interned with J.B. Hunt',
     startDate: new Date(2020, 5, 1),
+    endDate: new Date(2021, 5, 12),
     description:
-      'Reinventing transportation through the development of innovative software solutions for a national portfolio of customers.',
+      'Upgraded and maintained a core software product implemented in Angular, reducing technical debt and building new features to improve DX.',
   },
   {
     Icon: BookOpen,

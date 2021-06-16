@@ -14,7 +14,8 @@ export default function Home(): JSX.Element {
             Hey <Emoji symbol="👋🏻" label="wave" /> I&apos;m Kyle Huggins.
           </h1>
           <p>
-            I‘m a designer and developer from Houston, Texas. I love web development, design systems, and photography.
+            I‘m a designer and developer living in Northwest Arkansas. I love web development, design systems, and
+            photography.
           </p>
         </article>
         <div className="flex space-x-6 mt-6">
