@@ -15,7 +15,8 @@ export const CurrentEntries: Array<Entry> = [
     name: 'Interned with J.B. Hunt',
     startDate: new Date(2020, 5, 1),
     endDate: new Date(2021, 5, 12),
-    description: 'Upgraded and maintained a core software product implemented in Angular, reducing technical debt and building new features to improve DX.',
+    description:
+      'Upgraded and maintained a core software product implemented in Angular, reducing technical debt and building new features to improve DX.',
   },
   {
     Icon: BookOpen,
